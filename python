@@ -1,0 +1,145 @@
+import turtle
+import time
+
+
+ukuranfont = 18
+ukuranfont2 = 16
+
+# sets background
+bg = turtle.Screen()
+bg.bgcolor("black")
+
+pen = turtle.Turtle()
+
+turtle.hideturtle()
+# Bottom Line 1
+turtle.penup()
+turtle.goto(-170,-180)
+turtle.color("white")
+turtle.pendown()
+turtle.forward(350)
+
+# Mid Line 2
+turtle.penup()
+turtle.goto(-170,-150)
+turtle.color("white")
+turtle.pendown()
+turtle.forward(330)
+
+# First Line 3
+turtle.penup()
+turtle.goto(-170,-120)
+turtle.color("white")
+turtle.pendown()
+turtle.forward(310)
+
+# Cake
+turtle.penup()
+turtle.goto(-100,-100)
+turtle.color("white")
+turtle.begin_fill()
+turtle.pendown()
+turtle.forward(140)
+turtle.left(90)
+turtle.forward(95)
+turtle.left(90)
+turtle.forward(140)
+turtle.left(90)
+turtle.forward(95)
+turtle.end_fill()
+
+# Candles
+turtle.penup()
+turtle.goto(-90,0)
+turtle.color("red")
+turtle.left(180)
+turtle.pendown()
+turtle.forward(20)
+
+turtle.penup()
+turtle.goto(-60,0)
+turtle.color("blue")
+turtle.pendown()
+turtle.forward(20)
+
+turtle.penup()
+turtle.goto(-30,0)
+turtle.color("yellow")
+turtle.pendown()
+turtle.forward(20)
+
+turtle.penup()
+turtle.goto(0,0)
+turtle.color("green")
+turtle.pendown()
+turtle.forward(20)
+
+turtle.penup()
+turtle.goto(30,0)
+turtle.color("purple")
+turtle.pendown()
+turtle.forward(20)
+
+# Decoration
+colors = ["red", "orange", "yellow", "green", "blue", "purple", "black"]
+turtle.penup()
+turtle.goto(-40,-50)
+turtle.pendown()
+
+for each_color in colors:
+    angle = 360 / len(colors)
+    turtle.color(each_color)
+    turtle.begin_fill()
+    turtle.circle(10)
+    turtle.right(angle)
+    turtle.forward(10)
+    turtle.end_fill()
+    
+
+# Happy Birthday message
+
+def tulis(pesan, pos):
+    x,y=pos
+    pen.penup()
+    pen.goto(x,y)
+    pen.color('red')
+    style=('Stencil Std', ukuranfont, 'italic')
+    pen.write(pesan, font=style)
+    
+def pesan(pesan, pos):
+    x,y=pos
+    pen.penup()
+    pen.goto(x,y)
+    pen.color('white')
+    style=('Stencil Std', ukuranfont2, 'italic')
+    pen.write(pesan, font=style)
+
+tulis('H',(-140.9,95))
+time.sleep(0.1)
+tulis('A',(-128,95))
+time.sleep(0.1)
+tulis('P',(-115,95))
+time.sleep(0.1)
+tulis('P',(-103,95))
+time.sleep(0.1)
+tulis('Y',(-87,95))
+time.sleep(0.1)
+tulis('B',(-63,95))
+time.sleep(0.1)
+tulis('I',(-47,95))
+time.sleep(0.1)
+tulis('R',(-40,95))
+time.sleep(0.3)
+tulis('T',(-25,95))
+time.sleep(0.1)
+tulis('H',(-13,95))
+time.sleep(0.1)
+tulis('D',(2,95))
+time.sleep(0.3)
+tulis('A',(15,95))
+time.sleep(0.1)
+tulis('Y',(27,95))
+time.sleep(0.1)
+pesan('''To Grandma :)
+May your soul rest in peace and be happy with God,''',(-140,40))
+time.sleep(5)
